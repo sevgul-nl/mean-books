@@ -1,3 +1,5 @@
+block variables
+    - var APPREFIX = '/abooks' 
 doctype html
 html
   head
@@ -6,16 +8,18 @@ html
     link(rel='stylesheet', href='./stylesheets/bootstrap.min.css')
     link(rel='stylesheet', href='./stylesheets/all.min.css')
     link(rel='stylesheet', href='./stylesheets/style.css')
+    
+
   body    
     nav.navbar.fixed-top.navbar-expand-md
       .container
-        a.navbar-brand(href='/list') Home
+        a.navbar-brand(href=APPREFIX + '/list') Home
           button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarMain')
             span.navbar-toggler-icon 
           #navbarMain.navbar-collapse.collapse
         ul.navbar-nav.mr-auto
             li.nav-item
-              a.nav-link(href='/about') About    
+              a.nav-link(href=APPREFIX + '/about') About    
     .container.content
       block content
       footer
