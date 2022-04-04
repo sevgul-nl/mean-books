@@ -1,3 +1,5 @@
+const APPREFIX = '/abooks';
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -19,11 +21,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use(express.static(path.join(__dirname, 'public')));
-//app.use(APPREFIX + '/', express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
+app.use(APPREFIX, express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use(APPREFIX, indexRouter);
+//app.use(APPREFIX + '/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
