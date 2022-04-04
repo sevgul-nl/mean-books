@@ -4,8 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-const APPREFIX = '/abooks';
-
 const indexRouter = require('./backend/routes/index');
 const usersRouter = require('./backend/routes/users');
 
@@ -20,11 +18,9 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-//app.use(express.static(path.join(__dirname, 'public')));
-console.log(APPREFIX + '/');
-console.log(__dirname);
-//app.use(APPREFIX + '/', express.static('public'));
-app.use(APPREFIX + '/', express.static(path.join(__dirname, 'public')));
+
+app.use(express.static(path.join(__dirname, 'public')));
+//app.use(APPREFIX + '/', express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
