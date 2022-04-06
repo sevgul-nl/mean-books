@@ -1,6 +1,6 @@
 /* GET 'Add review' page */
 const addReview = (req, res) => {
-  res.render('index', { title: 'Add review' });
+  res.render('review-form', { title: 'Add review' });
 };
 
 module.exports = {

@@ -1,129 +1,83 @@
 extends layout
 
 block content
-  h1= title
   .row.banner
-   .col-12
-    h1 mean books
-      small &nbsp;select book to add review
-    .row
-     .col-12.col-md-8
-      .card
-        .card-block
-          h4
-            a(href= APPREFIX + "/details")  Moby Dick
-            small &nbsp;
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star
-              i.far.fa-star
-              i.far.fa-star
-            span.badge.badge-pill.float-right 19900 downloads
-      p.book Moby Dick; Or, The Whale by Melville, Herman, 1819-1891
-      .facilities
-        span.badge.badge-warning English
-        span.badge.badge-warning Whaling
-        span.badge.badge-warning Sea stories
-        span.badge.badge-warning Psychological fiction
-        span.badge.badge-warning Ship captains
-     .col-12.col-md-4
-      p.lead read the reviews.
-   .row
-     .col-12.col-md-8
-      .card
-        .card-block
-          h4
-            a(href=APPREFIX + "/details")  A Tale of Two Cities
-            small &nbsp;
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star
-              i.far.fa-star
-              i.far.fa-star
-            span.badge.badge-pill.float-right 21585 downloads
-      p.book A Tale of Two Cities by 	Dickens, Charles, 1812-1870
-      .facilities
-        span.badge.badge-warning English
-        span.badge.badge-warning Historical fiction
-        span.badge.badge-warning France 
-        span.badge.badge-warning London (England) 
-        span.badge.badge-warning War stories
-     .col-12.col-md-4
-      p.lead read the reviews.
-   .row
-     .col-12.col-md-8
-      .card
-        .card-block
-          h4
-            a(href=APPREFIX + "/details")  War and Peace
-            small &nbsp;
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star
-              i.far.fa-star
-              i.far.fa-star
-            span.badge.badge-pill.float-right 12189 downloads
-      p.book  War and Peace by Tolstoy, Leo, 1828-1910
-      .facilities
-        span.badge.badge-warning English
-        span.badge.badge-warning Historical fiction
-        span.badge.badge-warning War stories
-        span.badge.badge-warning Napoleonic Wars
-        span.badge.badge-warning Russia
-        span.badge.badge-warning Aristocracy (Social class)
-     .col-12.col-md-4
-      p.lead read the reviews.
-   .row
-     .col-12.col-md-8
-      .card
-        .card-block
-          h4
-            a(href=APPREFIX + "/details")  Jane Eyre
-            small &nbsp;
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star
-              i.far.fa-star
-              i.far.fa-star
-            span.badge.badge-pill.float-right 16852 downloads
-      p.book Jane Eyre, Brontë, Charlotte, 1816-1855
-      .facilities
-        span.badge.badge-warning England
-        span.badge.badge-warning Young women
-        span.badge.badge-warning Love stories
-        span.badge.badge-warning Governesses
-        span.badge.badge-warning Fathers and daughters
-        span.badge.badge-warning Mentally ill women
-        span.badge.badge-warning Subject Charity-schools
-     .col-12.col-md-4
-      p.lead read the reviews.
-   .row
-     .col-12.col-md-8
-      .card
-        .card-block
-          h4
-            a(href=APPREFIX + "/details")  Ulysses
-            small &nbsp;
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star
-              i.far.fa-star
-              i.far.fa-star
-            span.badge.badge-pill.float-right 12719 downloads
-      p.book Ulysses by Joyce, James
-      .facilities
-        span.badge.badge-warning City and town life
-        span.badge.badge-warning Psychological fiction
-        span.badge.badge-warning Domestic fiction
-        span.badge.badge-warning Married people
-        span.badge.badge-warning Male friendship
-        span.badge.badge-warning Dublin (Ireland)
-        span.badge.badge-warning Epic literature
-     .col-12.col-md-4
-      p.lead read the reviews.
-  
-  
-  h3 ongoing development...
-
-
-
+    .col-12
+      h1 Moby Dick
+  .row
+    .col-12.col-lg-9
+      .row
+        .col-12.col-md-6
+          p.rating
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.far.fa-star
+            i.far.fa-star
+          p.book Moby Dick; Or, The Whale by Melville, Herman, 1819-1891
+          .card.card-primary
+            .card-block
+              h2.card-title Subjects
+              p.card-text Whaling
+              p.card-text Sea stories
+              p.card-text Psychological fiction
+              p.card-text Ship captains
+          .card.card-primary
+            .card-block
+              h2.card-title Subjects
+              span.badge.badge-warning
+                i.fa.fa-check
+                | &nbsp;Whaling
+              | &nbsp;
+              span.badge.badge-warning
+                i.fa.fa-check
+                | &nbsp;Sea stories
+              | &nbsp;
+              span.badge.badge-warning
+                i.fa.fa-check
+                | &nbsp;Psychological fiction
+              | &nbsp;
+              span.badge.badge-warning
+                  i.fa.fa-check
+                  | &nbsp;Ship captains
+              | &nbsp;
+        .col-12.col-md-6.location-map
+          .card.card-primary
+            .card-block
+              h2.card-title Location map
+                img.img-fluid.rounded(src='http://maps.googleapis.com/maps/api/..............staticmap?center=51.455041,-0.9690884&zoom=17&size=400x350&sensor=false&markers=51.455041,-0.9690884&scale=2&key=<API Key>')
+      .row
+        .col-12 
+         .card.card-primary.review-card
+          .card-block
+            a.btn.btn-primary.float-right(href=APPREFIX + '/review/add') Add review
+            h2.card-title Reader reviews
+            .row.review
+              .col-12.no-gutters.review-header
+                span.rating
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.far.fa-star
+                  i.far.fa-star
+                span.reviewAuthor Baki Sevgul
+                small.reviewTimestamp 5 April 2022
+              .col-12
+                p a great reading.
+            .row.review
+              .col-12.no-gutters.review-header
+                span.rating
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.far.fa-star
+                  i.far.fa-star
+                span.reviewAuthor Bilge Sevgul
+                small.reviewTimestamp 4 March 2022
+              .col-12
+                p It was okay. Strowy wasn't great.
+    .col-12.col-lg-3
+        p.lead
+          | Moby dick is selected because it is famous novel is.
+        p
+          | If you've read it and you like it - or if you don't - please write a review.
