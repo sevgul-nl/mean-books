@@ -5,6 +5,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+//const favicon = require('serve-favicon');
+require('./backend/models/mongodb');
 
 const indexRouter = require('./backend/routes/index');
 const usersRouter = require('./backend/routes/users');
