@@ -1,0 +1,3 @@
+
+docker pull arm7/mongo
+docker run --name mongod -v /data/mongo:/data/db -p 27017:27017 -d arm7/mongo mongod

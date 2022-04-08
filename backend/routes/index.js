@@ -8,7 +8,7 @@ const ctrlAbout = require('../controllers/ctrlabout');
 
 router.get('/', ctrlBooks.list);
 router.get('/list', ctrlBooks.list);
-router.get('/details', ctrlBooks.details);
+router.get('/details/:bookname', ctrlBooks.details);
 router.get('/review/add', ctrlReviews.addReview);
 router.get('/about', ctrlAbout.about);
 

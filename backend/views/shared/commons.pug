@@ -1,0 +1,6 @@
+mixin rating(rate)
+  small &nbsp;
+    - for (let i = 1; i <= rate; i++)
+      i.fas.fa-star
+    - for (let i = rate; i < 5; i++)
+      i.far.fa-star

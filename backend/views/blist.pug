@@ -1,126 +1,23 @@
 extends layout
 
+include shared/commons
+
 block content
-  h1= title
   .row.banner
-   .col-12
-    h1 mean books
-      small &nbsp;select book to add review
-    .row
-     .col-12.col-md-8
-      .card
-        .card-block
-          h4
-            a(href=APPREFIX + "/details")  Moby Dick
-            small &nbsp;
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star
-              i.far.fa-star
-              i.far.fa-star
-            span.badge.badge-pill.float-right 19900 downloads
-      p.book Moby Dick; Or, The Whale by Melville, Herman, 1819-1891
-      .subjects
-        span.badge.badge-warning English
-        span.badge.badge-warning Whaling
-        span.badge.badge-warning Sea stories
-        span.badge.badge-warning Psychological fiction
-        span.badge.badge-warning Ship captains
-     .col-12.col-md-4
-      p.lead read the reviews.
-   .row
-     .col-12.col-md-8
-      .card
-        .card-block
-          h4
-            a(href=APPREFIX + "/details")  A Tale of Two Cities
-            small &nbsp;
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star
-              i.far.fa-star
-              i.far.fa-star
-            span.badge.badge-pill.float-right 21585 downloads
-      p.book A Tale of Two Cities by 	Dickens, Charles, 1812-1870
-      .subjects
-        span.badge.badge-warning English
-        span.badge.badge-warning Historical fiction
-        span.badge.badge-warning France 
-        span.badge.badge-warning London (England) 
-        span.badge.badge-warning War stories
-     .col-12.col-md-4
-      p.lead read the reviews.
-   .row
-     .col-12.col-md-8
-      .card
-        .card-block
-          h4
-            a(href=APPREFIX + "/details")  War and Peace
-            small &nbsp;
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star
-              i.far.fa-star
-              i.far.fa-star
-            span.badge.badge-pill.float-right 12189 downloads
-      p.book  War and Peace by Tolstoy, Leo, 1828-1910
-      .subjects
-        span.badge.badge-warning English
-        span.badge.badge-warning Historical fiction
-        span.badge.badge-warning War stories
-        span.badge.badge-warning Napoleonic Wars
-        span.badge.badge-warning Russia
-        span.badge.badge-warning Aristocracy (Social class)
-     .col-12.col-md-4
-      p.lead read the reviews.
-   .row
-     .col-12.col-md-8
-      .card
-        .card-block
-          h4
-            a(href=APPREFIX + "/details")  Jane Eyre
-            small &nbsp;
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star
-              i.far.fa-star
-              i.far.fa-star
-            span.badge.badge-pill.float-right 16852 downloads
-      p.book Jane Eyre, Brontë, Charlotte, 1816-1855
-      .subjects
-        span.badge.badge-warning England
-        span.badge.badge-warning Young women
-        span.badge.badge-warning Love stories
-        span.badge.badge-warning Governesses
-        span.badge.badge-warning Fathers and daughters
-        span.badge.badge-warning Mentally ill women
-        span.badge.badge-warning Subject Charity-schools
-     .col-12.col-md-4
-      p.lead read the reviews.
-   .row
-     .col-12.col-md-8
-      .card
-        .card-block
-          h4
-            a(href=APPREFIX + "/details")  Ulysses
-            small &nbsp;
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star
-              i.far.fa-star
-              i.far.fa-star
-            span.badge.badge-pill.float-right 12719 downloads
-      p.book Ulysses by Joyce, James
-      .subjects
-        span.badge.badge-warning City and town life
-        span.badge.badge-warning Psychological fiction
-        span.badge.badge-warning Domestic fiction
-        span.badge.badge-warning Married people
-        span.badge.badge-warning Male friendship
-        span.badge.badge-warning Dublin (Ireland)
-        span.badge.badge-warning Epic literature
-     .col-12.col-md-4
-      p.lead read the reviews.
+    .col-12
+      h1= pageHeader.title
+        small &nbsp;#{pageHeader.strapLine}
+  .row
+    .col-12.col-md-8
+      each book in books
+        .card
+          .card-block  
+            h4
+              a(href=APPREFIX + '/details/'+book.title)= book.title
+              +rating(book.rate)
+        p.author #{book.title} by  #{book.author}
+    .col-12.col-md-4
+      p.lead read reviews.
   
   
   h3 ongoing development...
